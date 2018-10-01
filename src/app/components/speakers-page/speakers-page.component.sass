@@ -1,0 +1,124 @@
+.modal
+  border-radius: 20px
+  outline: none
+  position: relative
+  .bg
+    z-index: -1
+    // background: linear-gradient(180deg, rgba(250, 250, 250, 0.2) 0%, rgba(15, 21, 25, 1) 95%, rgba(19, 26, 32, 1) 100%), radial-gradient(farthest-side at 0 0, rgba(255, 26, 198, .4), rgba(255, 26, 198, 0)), radial-gradient(farthest-side at 100% 0, rgba(60, 221, 221, .5), rgba(60, 221, 221, 0)), radial-gradient(farthest-side at 50% 0, rgba(255, 26, 198, .2), rgba(255, 26, 198, 0))
+    background:  radial-gradient(farthest-side at 0 0, rgba(255, 26, 198, .4), rgba(255, 26, 198, 0)), radial-gradient(farthest-side at 100% 0, rgba(60, 221, 221, .5), rgba(60, 221, 221, 0)), radial-gradient(farthest-side at 50% 0, rgba(255, 26, 198, .2), rgba(255, 26, 198, 0))
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100px
+  .modal-content
+    margin: 0 40px
+    .title-wrapper
+      .img-wrapper
+        width: 120px
+        padding: 0
+        height: 120px
+        min-width: 120px
+        border-radius: 120px
+        overflow: hidden
+        border: 4px solid #fff
+        img
+          height: 100%
+          width: 100%
+          object-fit: cover
+      .name
+        font-size: 30px
+        line-height: 120px
+    .about
+      .place,.work
+        line-height: 30px
+        font-size: 25px
+        &.work
+          margin-bottom: 20px
+          font-size: 20px
+          font-weight: lighter
+      .about-text
+        line-height: 25px
+        font-size: 15px
+      .links
+        margin: 30px 0
+        a
+          font-size: 30px
+          color: #7446C4
+          display: inline-block
+          height: 50px 
+          padding: 10px
+          border-radius: 25px
+          width: 50px
+          &:hover
+            box-shadow: 0 0 25px 3px #cccccc
+          i 
+            font-size: 30px
+            vertical-align: top
+#speakers
+  .title-warpper  
+    background: #fff
+    height: 300px
+    @media (max-width: 600px)
+      height: 150px
+    width: 100%
+    position: relative
+    .title
+      position: absolute
+      bottom: 150px
+      left: 50px
+      color: #673AB7
+      font-size: 3em
+    .text 
+      position: absolute
+      bottom: 30px
+      left: 50px
+      font-size: 18px
+      font-family: Roboto
+      font-weight: 400
+      max-width: 700px
+  .fliter-row 
+    padding: 20px 0
+    .btn  
+      font-size: 14px 
+      i
+        padding-left: 5px
+        font-size: 14px 
+  .speaker-wrapper  
+    margin: 50px 0
+    .speaker
+      max-width:  320px
+      margin: 30px auto
+      height: 430px
+      text-align: center
+      padding: 20px
+      border-radius: 20px
+      transition: all 0.5s ease
+      .img-wrapper 
+        width: 150px
+        height: 150px 
+        border-radius: 100px
+        margin: auto
+        overflow: hidden
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+      .name
+        margin: 20px 0
+        font-size: 1.6em
+      .about
+        color: #888888
+        .place
+          margin: 20px 0
+        .work 
+          margin: 20px 0
+      .links
+        margin: 20px 0
+        a
+          margin: 5px
+          font-size: 1.3em
+          color: #888888
+          transition: all 0.3s ease
+          &:hover
+            color: #454545

@@ -13,6 +13,18 @@ import { TeamBlockComponent } from './components/home-page/team-block/team-block
 import { MapBlockComponent } from './components/home-page/map-block/map-block.component';
 import { PartnersBlockComponent } from './components/home-page/partners-block/partners-block.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+var config = {
+  apiKey: "AIzaSyBUMZKY2ji3Dpe-Yoicos30GrpP9Au_LFM",
+  authDomain: "devfest-18-6be27.firebaseapp.com",
+  databaseURL: "https://devfest-18-6be27.firebaseio.com",
+  projectId: "devfest-18-6be27",
+  storageBucket: "devfest-18-6be27.appspot.com",
+  messagingSenderId: "823654264989"
+};
 
 @NgModule({
   declarations: [
@@ -26,10 +38,13 @@ import { FooterComponent } from './components/footer/footer.component';
     MapBlockComponent,
     PartnersBlockComponent,
     FooterComponent,
+    SpeakersPageComponent,
   ],
   imports: [
     routes,
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
