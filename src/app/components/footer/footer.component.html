@@ -102,12 +102,13 @@
         </div>
         <form action="">
           <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
+            <input #email="ngModel" id="email" [(ngModel)]="subsriberEmail" name="email" type="text" class="validate"
+              required pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
             <label for="email">Email</label>
           </div>
-          <div class="waves-effect waves-dark btn btn-arrow right">
+          <div class="waves-effect waves-dark btn btn-arrow right" (click)="subscribeClick(subsriberEmail)" *ngIf="!email.errors">
             <span>
-              Subsscribe
+              Subscribe
             </span>
             <i class="large material-icons">arrow_forward</i>
           </div>

@@ -1,3 +1,3 @@
 export const config = {
-  collection_endpoint: 'users'
+  collection_endpoint: 'Subscribers'
 };
