@@ -100,30 +100,29 @@
         <div class="footer-section-title small">
           No spam, only the latest news and updates!
         </div>
-        <form action="">
+        <form action="" [formGroup]="subscribeForm" (ngSubmit)="subscribe()">
           <div class="input-field col s12">
-            <input #email="ngModel" id="email" [(ngModel)]="subsriberEmail" name="email" type="text" class="validate"
-              required pattern="[a-zA-Z0-9.-]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            <input  id="email" name="email" formControlName="email" type="text" class="validate">
             <label for="email">Email</label>
           </div>
-          <div class="waves-effect waves-dark btn btn-arrow right" (click)="subscribeClick(subsriberEmail)" *ngIf="!email.errors">
+          <button class="waves-effect waves-dark btn btn-arrow right" type="submit" [disabled]="!subscribeForm.valid">
             <span>
               Subscribe
             </span>
             <i class="large material-icons">arrow_forward</i>
-          </div>
+          </button>
         </form>
       </div>
     </div>
     <div class="divider"></div>
     <div class="copywrite row no-marg">
-      <div class="left">
-        <div class="logo">
+      <div class="col s12 m6">
+        <div class="logo left-align">
           <img src="assets/images/logo.png" alt="">
         </div>
       </div>
-      <div class="right">
-        <div class="text">
+      <div class="col s12 m6">
+        <div class="text right-align">
           © GDG Gandhinagar
         </div>
       </div>

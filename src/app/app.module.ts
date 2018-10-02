@@ -48,7 +48,8 @@ var config = {
     BrowserModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
-    FormsModule      
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,6 +15,6 @@ export class AppService {
     this.emails = db.collection<Emails>(config.collection_endpoint);
   }
   addEmails(emails) {
-    this.emails.add(emails);
+    return this.emails.add(emails)
   }
 }

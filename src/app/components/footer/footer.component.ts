@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { ReactiveFormsModule,FormGroup,FormControl,Validators } from '@angular/forms';
 import { AppService } from '../../app.service';
 declare var M;
 @Component({
@@ -8,20 +8,24 @@ declare var M;
   styleUrls: ['./footer.component.sass']
 })
 export class FooterComponent implements OnInit {
-
-  // constructor(private db: AngularFirestore, private taskService: AppService) {
-
-  // }
+  subscribeForm:FormGroup;
   constructor (public email: AppService){
-
+    this.subscribeForm = new FormGroup({
+      'email' : new FormControl('',[Validators.required,Validators.email])
+    })
   }
+
   ngOnInit() {
   }
-  subsriberEmail: string;
-  subscribeClick(email){
-    this.email.addEmails({'EmailId':email});
-    M.toast({html:'Thank you for subscribing to our mail'})
-    this.subsriberEmail = "";
+
+  subscribe(){
+    if(this.subscribeForm.valid){
+      console.log(this.subscribeForm.controls['email'])
+      let result  = this.email.addEmails({'EmailId':this.subscribeForm.controls['email'].value});
+      M.toast({html:'Thank you for subscribing!'})
+    } else {
+      M.toast({html:'Please enter valid email '})
+    }
   }
   
 
