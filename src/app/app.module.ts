@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SpeakersPageComponent } from './components/speakers-page/speakers-page.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { TeamPageComponent } from './components/team-page/team-page.component';
 
 var config = {
   apiKey: "AIzaSyBUMZKY2ji3Dpe-Yoicos30GrpP9Au_LFM",
@@ -39,6 +40,7 @@ var config = {
     PartnersBlockComponent,
     FooterComponent,
     SpeakersPageComponent,
+    TeamPageComponent,
   ],
   imports: [
     routes,
