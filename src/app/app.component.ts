@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AppService } from './app.service';
 import { Observable } from 'rxjs';
 import { config } from './app.config';
-import { Task } from './app.model';
+import { Emails } from './app.model';
 declare var $;
 @Component({
   selector: 'app-root',

@@ -17,6 +17,7 @@ import { SpeakersPageComponent } from './components/speakers-page/speakers-page.
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TeamPageComponent } from './components/team-page/team-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 var config = {
   apiKey: "AIzaSyBUMZKY2ji3Dpe-Yoicos30GrpP9Au_LFM",
@@ -46,7 +47,8 @@ var config = {
     routes,
     BrowserModule,
     AngularFireModule.initializeApp(config),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule      
   ],
   providers: [],
   bootstrap: [AppComponent]

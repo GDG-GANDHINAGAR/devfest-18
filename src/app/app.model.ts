@@ -1,4 +1,3 @@
-export interface Task {
-  id: string;
-  mail: string;
+export interface Emails {
+  EmailId: string;
 }
