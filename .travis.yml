@@ -17,11 +17,11 @@ install:
 
 script:
   # - yarn lint
-  - ng build --base-href https://gdg-gandhinagar.github.io/devfest-18/
+  - ng build --prod --base-href ./
   - cd dist/devfestSite
   - touch CNAME
   - echo "devfest.gdggandhinagar.org" > CNAME
-  
+
 deploy:
   provider: pages
   skip_cleanup: true
