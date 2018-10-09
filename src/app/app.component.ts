@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AppService } from './app.service';
+import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { config } from './app.config';
 import { Emails } from './app.model';
@@ -11,51 +13,39 @@ declare var $;
 })
 export class AppComponent implements OnInit {
   tasks;
+  isOnHome = false;
+  loaded = false;
   title = 'devfestSite';
-  constructor(private db: AngularFirestore, private taskService: AppService) {
-
+  url;
+  constructor(private router: Router, private activeRoute: ActivatedRoute, private db: AngularFirestore, private taskService: AppService) {
   }
   ngOnInit() {
-    // this.tasks = this.db.collection(config.collection_endpoint).valueChanges().subscribe(action => {
-    //   // return
-    //   console.log(action)
-    // });
-    // this.db.collection(config.collection_endpoint).ref.where
-    // this.db
-    //   .collection(config.collection_endpoint)
-    //   .snapshotChanges()
-    //   .subscribe(action => {
-    //     console.log(action)
-    //   })
-    // console.log(this.tasks)
-
-    // .(actions => {
-    //     return actions.map(a => {
-    //       //Get document data
-    //       const data = a.payload.doc.data() as Task;
-    //       //Get document id
-    //       const id = a.payload.doc.id;
-    //       //Use spread operator to add the id to the document data
-    //       return { id, …data };
-    //     });
-    //   });
+    this.router.events.pipe(filter(data => data instanceof NavigationEnd)).subscribe(data => {
+      this.url = data['url'];
+      if (data['url'] !== '' || data['url'] !== '/home') {
+        this.isOnHome = true
+      }
+      console.log(data)
+    })
     setTimeout(val => {
       this.destroySideNav();
       $('.sidenav').sidenav({
         closeOnClick: true
       });
+      this.isOnHome = this.getIsonHome();
+      this.loaded = true;
     }, 500);
-    // $('.modal').modal();
-    // $(window).scroll(function () {
-    //   if ($(this).scrollTop() > 100) {
-    //     console.log($(this).scrollTop())
-    //     $("nav#nav").addClass('shadow')
-    //   } else {
-    //     $("nav#nav").removeClass('shadow')
-    //   }
-    // })
   }
-
+  @HostListener("window:scroll", ['$event']) onWindowScroll(event) {
+    this.isOnHome = this.getIsonHome();
+  }
+  getIsonHome() {
+    if (this.url === '' || this.url === '/home') {
+      return window.pageYOffset > (window.innerHeight * 0.5) ? true : false;
+    } else {
+      return true;
+    }
+  }
   // destroy side nav
   destroySideNav() {
     const $overlay = $('#sidenav-overlay');

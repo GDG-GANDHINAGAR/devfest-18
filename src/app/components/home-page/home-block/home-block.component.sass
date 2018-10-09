@@ -1,16 +1,23 @@
 #home
   .warpper
     width: 100%
-    height: calc(100vh - 64px)
+    height: 100vh
     position: relative
-    background: rgba(0, 0, 0, 0.6)
-    img.bg-img
+    top: -64px
+    background-image: url('assets/images/home_l.png')
+    @media screen and (orientation: portrait)
+      background-image: url('assets/images/home_p.jpg')
+      background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 100% 
+    .bg-img
+      background: #2F2F2E      
       z-index: -1
       position: absolute
-      bottom: 0
+      top: 0
       left: 50%
       transform: translate(-50%)
-      object-fit: cover 
       width: 100%
       height: 100%
     .content
@@ -20,8 +27,11 @@
       width: 100%
       transform: translate(-50%,-50%)
       .logo-wrapper
-        height: 75px
-        margin-bottom: 30px
+        max-width: 600px
+        @media #{$medium-and-down}
+          max-width: 400px
+        padding: 0 20px
+        margin: 0 auto 0 auto
         img
           object-fit: contain
           width: 100%

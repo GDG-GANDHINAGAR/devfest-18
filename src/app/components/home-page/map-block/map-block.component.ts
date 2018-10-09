@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-map-block',
   templateUrl: './map-block.component.html',
-  styleUrls: ['./map-block.component.sass']
 })
 export class MapBlockComponent implements OnInit {
-
+  title: string = 'My first AGM project';
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   constructor() { }
 
   ngOnInit() {
+    var mapProp = {
+    }
   }
 
 }

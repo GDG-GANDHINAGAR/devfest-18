@@ -18,7 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TeamPageComponent } from './components/team-page/team-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AgmCoreModule } from '@agm/core';
 var config = {
   apiKey: "AIzaSyBUMZKY2ji3Dpe-Yoicos30GrpP9Au_LFM",
   authDomain: "devfest-18-6be27.firebaseapp.com",
@@ -49,7 +49,10 @@ var config = {
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDECYAKntxXNoXm0_bsW9DEiZcg-hlaQqQ'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

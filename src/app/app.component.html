@@ -1,46 +1,37 @@
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
+<div class="navbar-fixed" [ngClass]="{'shadow': isOnHome}">
+  <nav  [ngClass]="{'hidenav': !loaded}"> 
+    <div class="nav-wrapper ">
       <a data-target="slide-out" class=" sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
       <div class="container">
         <a href="#" class="brand-logo">
-          <img src="assets/images/logo-monochrome.svg" alt="">
+          <!-- <img src="assets/images/df_logo_mono_purple.svg" alt=""> -->
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li routerLinkActive="active" ><a routerLink="/home">Home</a></li>
-          <li><a href="speakers.html">Schedule</a></li>
-          <li routerLinkActive="active" ><a routerLink="/speakers" >Speakers</a></li>
-          <li routerLinkActive="active" ><a routerLink="/team" >Team</a></li>
+          <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+          <!-- <li><a href="speakers.html">Schedule</a></li>
+          <li routerLinkActive="active" ><a routerLink="/speakers" >Speakers</a></li> -->
+          <li routerLinkActive="active"><a routerLink="/team">Team</a></li>
         </ul>
       </div>
     </div>
-    </nav>
+  </nav>
 </div>
 <ul id="slide-out" class="sidenav">
   <li>
     <div class="user-view">
       <div class="background">
-        <img src="images/office.jpg">
+        <img src="assets/images/home.jpg">
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#user" id='nav-logo'><img class="" src="assets/images/df_logo.svg"></a>
     </div>
   </li>
-  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-  <li><a href="#!">Second Link</a></li>
+  <li><a class="sidenav-close" routerLink='/home'>Home</a></li>
+  <li><a class="sidenav-close" routerLink='/team'>Team</a></li>
   <li>
     <div class="divider"></div>
   </li>
-  <li><a class="subheader">Subheader</a></li>
-  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  <li><a class="subheader">Resources</a></li>
+  <li><a class="sidenav-close waves-effect" href="https://goo.gl/forms/BS1SCfp07OeZNb2S2" target="_blank">Call for
+      Speakers</a></li>
 </ul>
-<!-- <ul id="slide-out" class="sidenav">
-  <li class="active"><a class="waves-effect" href="#home">Home</a></li>
-  <li class=""><a class="waves-effect" href="schedule.html">Schedule</a></li>
-  <li class=""><a class="waves-effect" href="speakers.html">Speakers</a></li>
-  <li class=""><a class="waves-effect" href="team.html">Team</a></li>
-</ul> -->
-<!-- <main class="main">
-</main> -->
 <router-outlet></router-outlet>
