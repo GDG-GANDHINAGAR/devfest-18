@@ -15,5 +15,5 @@ export const router: Routes = [
   // { path: '**', redirectTo: '/404' }
 ];
 
-export const routes: ModuleWithProviders = RouterModule.forRoot(router,{useHash: true});
+export const routes: ModuleWithProviders = RouterModule.forRoot(router);
 
