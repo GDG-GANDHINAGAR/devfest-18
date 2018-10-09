@@ -11,10 +11,22 @@
 <link rel="stylesheet" href="styles.523521836558a7f39a26.css"></head>
 
 <body>
+  <script>
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      } else {
+       
+      }
+    })();
+
+  </script>
   <app-root></app-root>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-    
+
   <script src="./assets/js/jquery-3.2.1.min.js"></script>
   <script src="./assets/js/undescore.js"></script>
   <script src="./assets/js/materialize.min.js"></script>
