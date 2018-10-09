@@ -276,7 +276,7 @@ var router = [
     { path: 'speakers', component: _components_speakers_page_speakers_page_component__WEBPACK_IMPORTED_MODULE_2__["SpeakersPageComponent"] },
     { path: 'team', component: _components_team_page_team_page_component__WEBPACK_IMPORTED_MODULE_3__["TeamPageComponent"] },
 ];
-var routes = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(router);
+var routes = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(router, { useHash: true });
 
 
 /***/ }),
