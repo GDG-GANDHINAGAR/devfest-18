@@ -7,8 +7,7 @@ import { SpeakersPageComponent } from './components/speakers-page/speakers-page.
 import { TeamPageComponent } from './components/team-page/team-page.component';
 
 export const router: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: HomePageComponent },
   { path: 'speakers', component: SpeakersPageComponent },
   { path: 'team', component: TeamPageComponent },
 //   { path: '404', component: NotFoundComponent },

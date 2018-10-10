@@ -22,10 +22,17 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.pipe(filter(data => data instanceof NavigationEnd)).subscribe(data => {
       this.url = data['url'];
-      if (data['url'] !== '' || data['url'] !== '/home') {
-        this.isOnHome = true
+      console.log(this.url)
+      window.scrollTo(0,0)
+      if (this.url === '/') {
+        this.isOnHome = this.getIsonHome();
+      } else {
+        this.isOnHome = true;
       }
-      console.log(data)
+      console.log('init')
+      console.log(this.url !== '/' || this.url !== '/home')
+      console.log(this.isOnHome)
+
     })
     setTimeout(val => {
       this.destroySideNav();
@@ -40,7 +47,9 @@ export class AppComponent implements OnInit {
     this.isOnHome = this.getIsonHome();
   }
   getIsonHome() {
-    if (this.url === '' || this.url === '/home') {
+    if (this.url === '/') {
+      console.log('fun');
+      console.log(window.pageYOffset > (window.innerHeight * 0.5) ? true : false);
       return window.pageYOffset > (window.innerHeight * 0.5) ? true : false;
     } else {
       return true;

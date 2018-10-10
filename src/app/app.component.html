@@ -7,7 +7,7 @@
           <!-- <img src="assets/images/df_logo_mono_purple.svg" alt=""> -->
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+          <li [ngClass]="{'active': url=='/'}"><a routerLink="">Home</a></li>
           <!-- <li><a href="speakers.html">Schedule</a></li>
           <li routerLinkActive="active" ><a routerLink="/speakers" >Speakers</a></li> -->
           <li routerLinkActive="active"><a routerLink="/team">Team</a></li>
@@ -20,12 +20,12 @@
   <li>
     <div class="user-view">
       <div class="background">
-        <img src="assets/images/home.jpg">
+        <img src="assets/images/home_l.png">
       </div>
-      <a href="#user" id='nav-logo'><img class="" src="assets/images/df_logo.svg"></a>
+      <a href="#user" id='nav-logo'><img class="" src="assets/images/home_top.png"></a>
     </div>
   </li>
-  <li><a class="sidenav-close" routerLink='/home'>Home</a></li>
+  <li><a class="sidenav-close" routerLink=''>Home</a></li>
   <li><a class="sidenav-close" routerLink='/team'>Team</a></li>
   <li>
     <div class="divider"></div>
