@@ -1,0 +1,37 @@
+<div class="navbar-fixed" [ngClass]="{'shadow': isOnHome}">
+  <nav  [ngClass]="{'hidenav': !loaded}"> 
+    <div class="nav-wrapper ">
+      <a data-target="slide-out" class=" sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
+      <div class="container">
+        <a href="#" class="brand-logo">
+          <!-- <img src="assets/images/df_logo_mono_purple.svg" alt=""> -->
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li [ngClass]="{'active': url=='/'}"><a routerLink="">Home</a></li>
+          <!-- <li><a href="speakers.html">Schedule</a></li>
+          <li routerLinkActive="active" ><a routerLink="/speakers" >Speakers</a></li> -->
+          <li routerLinkActive="active"><a routerLink="/team">Team</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<ul id="slide-out" class="sidenav">
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <img src="assets/images/home_l.png">
+      </div>
+      <a href="#user" id='nav-logo'><img class="" src="assets/images/home_top.png"></a>
+    </div>
+  </li>
+  <li><a class="sidenav-close" routerLink=''>Home</a></li>
+  <li><a class="sidenav-close" routerLink='/team'>Team</a></li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <li><a class="subheader">Resources</a></li>
+  <li><a class="sidenav-close waves-effect" href="https://goo.gl/forms/BS1SCfp07OeZNb2S2" target="_blank">Call for
+      Speakers</a></li>
+</ul>
+<router-outlet></router-outlet>

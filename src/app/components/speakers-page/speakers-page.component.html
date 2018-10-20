@@ -1,0 +1,104 @@
+<div id="speakers">
+  <div class="container">
+    <div class="title-warpper">
+      <div class="title">
+        Speakers
+      </div>
+      <div class="text">
+        Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as
+        we add more speakers, including our customers and partners.
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col s12  fliter-row right-align">
+      <div class="btn">fliter<i class="fas fa-filter"></i></div>
+    </div>
+    <div class="filter">
+      <div class="tags">
+        <div class="tag col" *ngFor='let filter of availableFilters' (click)="setFilters(filter)" [ngClass]="{'active': activeFilters.indexOf(filter) !== -1}">
+          {{filter}}
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="speaker-wrapper">
+      <div class="row">
+        <ng-container *ngFor='let i of speakers'>
+          <div class="col s12 m6 l4" *ngIf="filter(i.tag)">
+            {{i.tag}}
+
+            <div class="speaker waves-effect waves-block modal-trigger" data-target="modal">
+              <div class="img-wrapper ">
+                <img src="https://secure.gravatar.com/avatar/db320b5322d591e515391a7a60375fc4/?s=120&d=identicon" alt="">
+              </div>
+              <div class="content">
+                <div class="name">
+                  {{i.name}}
+                </div>
+                <div class="about">
+                  <div class="work">
+                    Infosenseglobal//Gandhingar
+                  </div>
+                  <div class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus sint fugit molestias error et
+                    veritatis itaque magni quisquam iure, nemo rem corrupti nulla officia sit numquam dolores nobis?
+                    Non,
+                    quibusdam?
+                  </div>
+                  <div class="links">
+                    <a href="https://www.facebook.com/yatendrajoddha" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/yatendrajoddha/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://yatendrasinh.wordpress.com/" target="_blank"><i class="fa fa-link"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal" class="modal">
+  <div class="bg">
+
+  </div>
+  <div class="modal-content">
+    <div class="title-wrapper row">
+
+      <div class="img-wrapper col">
+        <img src="https://avatars2.githubusercontent.com/u/3306366?v=4&s=460" alt="">
+      </div>
+      <div class="name col">
+        Pratik Butani
+      </div>
+    </div>
+    <div class="about">
+      <div class="place">
+        Gandhinagar
+      </div>
+      <div class="work">
+        Owner, iTanic
+      </div>
+      <div class="about-text">
+        I am Android Application Developer with the 4 years of Experience, Organizer and Speaker at Google Developer
+        Group – Rajkot.
+      </div>
+      <div class="links">
+        <a href="https://github.com/pratikbutani/" class="waves-effect" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="session">
+        <div class="title">
+          Session
+        </div>
+        <div class="text">
+          Hands-on with Cloud Firestore
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+  </div>
+</div>
+<app-footer></app-footer>

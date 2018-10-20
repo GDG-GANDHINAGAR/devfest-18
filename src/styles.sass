@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face 
+  font-family: 'Product Sans'
+  font-style: normal
+  font-weight: 400
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format("woff2")
+@import './materialize/materialize.scss'
+@import './app/app.component.sass'
+@import './app/components/home-page/home-page.component'
+.title
+  margin-bottom: 24px
+  padding: 0
+  font-size: 32px
+  line-height: 30px
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+  -webkit-box-shadow: 0 0 0px 0 #fff inset !important
+  transition: background-color 5000s ease-in-out 0s !important
+  background: #ffffff !important
+.auto-mid
+  margin: auto
+.no-marg
+  margin: 0 !important
+.btn-arrow
+  &:focus
+    background: #F0EBF8
+  background: #ffffff
+  color: #3f51b5
+  &.lite
+    color: #ffffff
+    &:hover
+      background: rgba(255,255,255,0.07) !important
+  box-shadow: none
+  height: 40px
+  line-height: 40px
+  i 
+    padding-left: 5px
+    transition: all ease 0.2s
+  span,i
+    line-height: 40px
+    vertical-align: middle
+  &:hover
+    background: #F0EBF8
+    box-shadow: none
+    i
+      padding-left: 15px
+.inline-block
+  display: inline-block

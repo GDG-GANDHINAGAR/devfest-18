@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: false
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install 
+
+script:
+  # - yarn lint
+  - ng build --prod --base-href ./
+  - cp src/404.html dist/devfestSite
+  - cd dist/devfestSite
+  - touch CNAME
+  - echo "devfest.gdggandhinagar.org" > CNAME
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/devfestSite
+  keep-history: true
+  on:
+    branch: master

@@ -1,0 +1,53 @@
+<div id="team">
+  <div class="container">
+    <div class="title-warpper">
+      <div class="title">
+        Team
+      </div>
+      <div class="text">
+        DevFest Gandhinagar is brought to you with love, efforts and endless fun from GDG Gandhinagar team. <br><br>
+
+        So what is GDG exactly? Perhaps Google doesn't need an introduction. Google services became common nouns —
+        every day we "google" things we need to know, check our Gmail on the go, and Google Maps is a lifesaver. For
+        regular users, they are just handy services, but not for us. Developers see much more: APIs, scalability
+        issues, complex technology stacks. And that is what GDG is about. <br><br>
+
+        Ever wondered what does it take to make a big tech conference? Here it is: {{team.length}} people working all year round, 0
+        full time workers and sometimes a lot of compromise :) If you're curious what's under the hood, we share a lot
+        of tips, confessions and lessons learned in our events. <br><br>
+
+        Also we are very talkative, so if you're a fellow community organizer or just have some random questions, feel
+        free to reach any of us on social media. We'd love to help! <br><br>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="team-wrapper">
+      <div class="row">
+        <div class="col s12 m6 l4" *ngFor='let member of team'>
+
+          <div class="team waves-effect waves-block modal-trigger" data-target="modal">
+            <div class="img-wrapper ">
+              <img src="{{member.pic}}" alt="">
+            </div>
+            <div class="content">
+              <div class="name">
+                {{member.name}}
+              </div>
+              <div class="about">
+                <div class="text">
+                  {{member.task}}
+                </div>
+                <div class="links">
+                  <ng-container *ngFor='let link of member.links'>
+                    <!-- <a href="https://www.facebook.com/yatendrajoddha" target="_blank"><i class="fab fa-github"></i></a> -->
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
