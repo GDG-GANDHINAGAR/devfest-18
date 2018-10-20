@@ -27,7 +27,7 @@ export class TeamPageComponent implements OnInit {
     },
     {
       'name': 'Bhavesh Valand',
-      'task': 'Social Media',
+      'task': 'Digital Strategist',
       'pic': 'assets/images/team_3.jpeg',
       'links': [{
         'icon': '',
