@@ -10,9 +10,6 @@
       </div>
     </div>
     <div class="divider"></div>
-    <div class="col s12  fliter-row right-align">
-      <div class="btn">fliter<i class="fas fa-filter"></i></div>
-    </div>
     <div class="filter">
       <div class="tags">
         <div class="tag col" *ngFor='let filter of availableFilters' (click)="setFilters(filter)" [ngClass]="{'active': activeFilters.indexOf(filter) !== -1}">
@@ -26,10 +23,9 @@
         <ng-container *ngFor='let i of speakers'>
           <div class="col s12 m6 l4" *ngIf="filter(i.tag)">
             {{i.tag}}
-
-            <div class="speaker waves-effect waves-block modal-trigger" data-target="modal">
+            <div class="speaker waves-effect waves-block modal-trigger" [attr.data-target]="'modal' + i.index">
               <div class="img-wrapper ">
-                <img src="https://secure.gravatar.com/avatar/db320b5322d591e515391a7a60375fc4/?s=120&d=identicon" alt="">
+                <img src="{{i.image}}" alt="">
               </div>
               <div class="content">
                 <div class="name">
@@ -37,19 +33,13 @@
                 </div>
                 <div class="about">
                   <div class="work">
-                    Infosenseglobal//Gandhingar
+                    {{i.work}}
                   </div>
-                  <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus sint fugit molestias error et
-                    veritatis itaque magni quisquam iure, nemo rem corrupti nulla officia sit numquam dolores nobis?
-                    Non,
-                    quibusdam?
-                  </div>
-                  <div class="links">
-                    <a href="https://www.facebook.com/yatendrajoddha" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://github.com/yatendrajoddha/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://yatendrasinh.wordpress.com/" target="_blank"><i class="fa fa-link"></i></a>
-                  </div>
+                  <!-- <div class="links">
+                    <a href="{{i.git}}" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="{{i.fb}}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="{{i.link}}" target="_blank"><i class="fa fa-link"></i></a>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -59,46 +49,46 @@
     </div>
   </div>
 </div>
-<div id="modal" class="modal">
+<div id="modal{{i.index}}" class="modal" *ngFor='let i of speakers'>
   <div class="bg">
-
   </div>
   <div class="modal-content">
     <div class="title-wrapper row">
 
       <div class="img-wrapper col">
-        <img src="https://avatars2.githubusercontent.com/u/3306366?v=4&s=460" alt="">
+        <img src="{{i.image}}" alt="">
       </div>
       <div class="name col">
-        Pratik Butani
+        {{i.name}}
       </div>
     </div>
     <div class="about">
-      <div class="place">
-        Gandhinagar
-      </div>
       <div class="work">
-        Owner, iTanic
+        {{i.work}}
       </div>
       <div class="about-text">
-        I am Android Application Developer with the 4 years of Experience, Organizer and Speaker at Google Developer
-        Group – Rajkot.
+        {{i.bio}}
       </div>
       <div class="links">
-        <a href="https://github.com/pratikbutani/" class="waves-effect" target="_blank"><i class="fab fa-github"></i></a>
+        <a *ngIf="i.git !== ''" href="{{i.git}}" class="waves-effect" target="_blank"><i class="fab fa-github"></i></a>
+        <a *ngIf="i.fb !== ''" href="{{i.fb}}" class="waves-effect" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a *ngIf="i.link !== ''" href="{{i.link}}" class="waves-effect" target="_blank"><i class="fa fa-link"></i></a>
       </div>
       <div class="session">
         <div class="title">
           Session
         </div>
+        <div class="text work">
+          {{i.session}}
+        </div>
         <div class="text">
-          Hands-on with Cloud Firestore
+          {{i.sessionDetail}}
         </div>
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
   </div>
 </div>
 <app-footer></app-footer>

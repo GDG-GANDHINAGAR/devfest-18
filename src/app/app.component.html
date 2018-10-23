@@ -8,8 +8,8 @@
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li [ngClass]="{'active': url=='/'}"><a routerLink="">Home</a></li>
-          <!-- <li><a href="speakers.html">Schedule</a></li>
-          <li routerLinkActive="active" ><a routerLink="/speakers" >Speakers</a></li> -->
+          <!-- <li><a href="speakers.html">Schedule</a></li>-->
+          <li routerLinkActive="active" ><a routerLink="/speakers" >Speakers</a></li> 
           <li routerLinkActive="active"><a routerLink="/team">Team</a></li>
         </ul>
       </div>
@@ -26,6 +26,7 @@
     </div>
   </li>
   <li><a class="sidenav-close" routerLink=''>Home</a></li>
+  <li><a class="sidenav-close" routerLink='/speakers'>Speakers</a></li>
   <li><a class="sidenav-close" routerLink='/team'>Team</a></li>
   <li>
     <div class="divider"></div>
