@@ -26,6 +26,11 @@
               <div class="img-wrapper ">
                 <img src="{{i.image}}" alt="">
               </div>
+              <div class="title-wrapper">
+                <div class="title">
+                  {{i.session}}
+                </div>
+              </div>
               <div class="content">
                 <div class="name">
                   {{i.name}}
@@ -34,11 +39,11 @@
                   <div class="work">
                     {{i.work}}
                   </div>
-                  <!-- <div class="links">
-                    <a href="{{i.git}}" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="{{i.fb}}" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="{{i.link}}" target="_blank"><i class="fa fa-link"></i></a>
-                  </div> -->
+                  <div class="links">
+                    <a *ngIf='i.git != ""' href="{{i.git}}" target="_blank"><i class="fab fa-github"></i></a>
+                    <a *ngIf='i.fb != ""' href="{{i.fb}}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a *ngIf='i.link != ""' href="{{i.link}}" target="_blank"><i class="fa fa-link"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
