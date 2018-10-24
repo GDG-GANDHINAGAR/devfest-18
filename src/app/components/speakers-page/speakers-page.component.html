@@ -22,7 +22,6 @@
       <div class="row">
         <ng-container *ngFor='let i of speakers'>
           <div class="col s12 m6 l4" *ngIf="filter(i.tag)">
-            {{i.tag}}
             <div class="speaker waves-effect waves-block modal-trigger" [attr.data-target]="'modal' + i.index">
               <div class="img-wrapper ">
                 <img src="{{i.image}}" alt="">
