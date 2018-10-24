@@ -18,7 +18,7 @@ export class TeamPageComponent implements OnInit {
     },
     {
       'name': 'Yatendrasinh Joddha',
-      'task': 'Venue & Food',
+      'task': '',
       'pic': 'assets/images/team_2.png',
       'links': [{
         'icon': '',
@@ -38,15 +38,6 @@ export class TeamPageComponent implements OnInit {
       'name': 'Arif Khoja',
       'task': 'Precipitance',
       'pic': 'assets/images/team_4.png',
-      'links': [{
-        'icon': '',
-        'url': ''
-      }]
-    },
-    {
-      'name': 'Naresh kumar',
-      'task': 'Quiz Master',
-      'pic': 'assets/images/prev_6.jpg',
       'links': [{
         'icon': '',
         'url': ''

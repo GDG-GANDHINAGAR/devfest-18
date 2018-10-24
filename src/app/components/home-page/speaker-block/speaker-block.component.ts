@@ -25,6 +25,13 @@ export class SpeakerBlockComponent implements OnInit {
       'pic': 'assets/images/prev_6.jpg',
     },
   ];
+
+  speakers = [
+    { index: 0, image: 'assets/images/Speakers/Arif.jpg', name: 'Arif Khoja'},    
+    { index: 1, image: 'assets/images/Speakers/Jinal.jpg', name: 'Jinal Shah'},
+    { index: 2, image: 'assets/images/Speakers/Jaldeep.jpg', name: 'Jaldeep Asodariya'},    
+    { index: 3, image: 'assets/images/Speakers/Hardy.jpg', name: 'Hardy Patel'},    
+]
   constructor() { }
 
   ngOnInit() {
